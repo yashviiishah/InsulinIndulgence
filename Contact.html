@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Insulin Indulgence</title>
+
+    <link rel="icon" href="logo_new.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    
+</head>
+<body>
+
+<header>
+    <img src="homepage_images\logo_new-removebg-preview.png" alt="Logo" class="logo">
+
+    <div class="nav-buttons">
+        <a href="new.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="#">Order Online</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+    </div>
+
+    <div class="auth-buttons">
+        <a href="login.html">Login</a>
+        <a href="register.html">Signup</a>
+    </div>
+</header>
+
+<div class="main">
+    <h1>Contact Us</h1>
+    <div class="contact-form">
+        <form id="contactForm" onsubmit="return validateForm()">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <span id="nameError" class="error"></span>
+
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <span id="emailError" class="error"></span>
+
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            <span id="subjectError" class="error"></span>
+
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            <span id="messageError" class="error"></span>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <img src="C:\Users\HP\Desktop\wp proj fin\public\homepage_images\logo_new.png" alt="Insulin Indulgence Logo" class="logo" style="width: 100px; transform: scale(1); margin-bottom: 10px;">
+            <p>A tasty treat for any occasion! Our cakes make it easy to celebrate any special event with family & friends.</p>
+        </div>
+        
+        <div>
+            <h2>Help & Information</h2>
+            <a href="Contact.html">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Shipping, Refunds and Cancellations</a>
+            <a href="#">Terms and Conditions</a>
+        </div>
+        <div>
+            <h2>Shop By Category</h2>
+            <a href="#">Celebration Cakes</a>
+            <a href="#">Mini Cakes</a>
+            <a href="#">Brownies</a>
+            <a href="#">Tea Cakes</a>
+        </div>
+        <div>
+            <h2>Menu</h2>
+            <a href="new.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="#">Corporates</a>
+            <a href="#">In The News</a>
+            <a href="AboutUs.html">About Us</a>
+            <a href="Contact.html">Contact Us</a>
+        </div>
+        <div class="map-container">
+            <h2>Find Us</h2>
+            <iframe
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDRYczTDT6kSz-bWGrLGh6WCaBgUSL-1Dk&q=InsulinIndulgence,MPSTME+Mumbai"
+                width="100%"
+                height="300"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function validateForm() {
+        let valid = true;
+
+        // Clear previous errors
+        document.getElementById("nameError").textContent = "";
+        document.getElementById("emailError").textContent = "";
+        document.getElementById("subjectError").textContent = "";
+        document.getElementById("messageError").textContent = "";
+
+        // Validate name
+        const name = document.getElementById("name").value;
+        if (name.trim() === "") {
+            document.getElementById("nameError").textContent = "Name is required.";
+            valid = false;
+        }
+
+        // Validate email
+        const email = document.getElementById("email").value;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            document.getElementById("emailError").textContent = "Please enter a valid email address.";
+            valid = false;
+        }
+
+        // Validate subject
+        const subject = document.getElementById("subject").value;
+        if (subject.trim() === "") {
+            document.getElementById("subjectError").textContent = "Subject is required.";
+            valid = false;
+        }
+
+        // Validate message
+        const message = document.getElementById("message").value;
+        if (message.trim() === "") {
+            document.getElementById("messageError").textContent = "Message is required.";
+            valid = false;
+        }
+
+        return valid;
+    }
+</script>
+
+</body>
+</html>
